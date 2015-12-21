@@ -1,0 +1,63 @@
+-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: 2015-11-21 06:54:43
+-- 服务器版本： 5.6.27
+-- PHP Version: 5.5.30
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `stock`
+--
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `STOCK_CODE`
+--
+
+CREATE TABLE `STOCK_CODE` (
+  `SEQ` int(6) NOT NULL,
+  `ISVALID` int(1) NOT NULL DEFAULT '1',
+  `CTIME` date NOT NULL,
+  `MTIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  `THSCODE` varchar(20) CHARACTER SET latin1 NOT NULL,
+  `MARKET` varchar(20) CHARACTER SET latin1 NOT NULL,
+  `STOCK_CODE` varchar(10) CHARACTER SET latin1 NOT NULL,
+  `STOCK_NAME` varchar(60) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `STOCK_PY` varchar(20) CHARACTER SET latin1 NOT NULL,
+  `STOCK_TOTAL_NAME` varchar(120) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `STOCK_CODE`
+--
+ALTER TABLE `STOCK_CODE`
+  ADD PRIMARY KEY (`SEQ`);
+
+--
+-- 在导出的表使用AUTO_INCREMENT
+--
+
+--
+-- 使用表AUTO_INCREMENT `STOCK_CODE`
+--
+ALTER TABLE `STOCK_CODE`
+  MODIFY `SEQ` int(6) NOT NULL AUTO_INCREMENT;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

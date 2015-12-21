@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>escharts Test</title>
+</head>
+<body>
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+{foreach from=$detailData key=k item=value}
+<div id="main_{$k}" style="height:400px"></div>
+{/foreach}
+
+{literal}
+<script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+<script type="text/javascript">
+{/literal}
+require.config({
+	paths: {
+		echarts: 'http://echarts.baidu.com/build/dist'
+	}
+});
+{foreach from=$detailData key=k item=value}
+var thscodes_{$k} = {$value.STOCK_NAME};
+console.log(thscodes_{$k});
+var dates_{$k} = {$value.date};
+var detail_data_{$k} = {$value.data};
+{literal}
+// 使用
+require(
+		[
+			'echarts',
+			'echarts/chart/line' // 使用柱状图就加载bar模块，按需加载
+		],
+		function (ec) {
+			// 基于准备好的dom，初始化echarts图表
+			{/literal}
+			var myChart = ec.init(document.getElementById('main_{$k}'));
+			var option_{$k} = {
+				tooltip : {
+					trigger: 'axis'
+				},
+				legend: {
+					data:thscodes_{$k}
+				},
+			{literal}
+				toolbox: {
+					show : true,
+					feature : {
+						mark : {show: true},
+						dataView : {show: true, readOnly: false},
+						magicType : {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+						restore : {show: true},
+						saveAsImage : {show: true}
+					}
+				},
+				calculable : true,
+				xAxis : [
+					{
+						type : 'category',
+						boundaryGap : false,
+					{/literal}
+						data :dates_{$k}
+
+					}
+				],
+				yAxis : [
+					{
+						type : 'value'
+					}
+				],
+				series : [
+					{
+						name:thscodes_{$k},
+						type:'line',
+						stack: '总量',
+						data:detail_data_{$k}
+					}
+				]
+			};
+			console.log(option_{$k});
+			// 为echarts对象加载数据
+			myChart.setOption(option_{$k});
+		}
+);
+
+{/foreach}
+{literal}
+</script>
+{/literal}
+</body>
+</html>
