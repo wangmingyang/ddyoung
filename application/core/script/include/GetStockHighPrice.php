@@ -4,8 +4,10 @@
  * User: jax
  * Date: 2015/12/15
  * WIN：php D:\xampp\xampp\htdocs\ddyoung\application\core\script\class -f GetStockHighPrice.php
+ * LIN GIT: php /usr/local/Apace2.2/htdocs/git/ddyoung/application/core/script/include/GetStockHighPrice.php
+ * LIN Work: php /usr/local/Apace2.2/htdocs/ddyoung/application/core/script/include/GetStockHighPrice.php
  * Time: 22:01
- */
+ */ 
 
 class GetStockHighPrice extends StockPic{
     public $db;
