@@ -3,9 +3,9 @@
  * Created by PhpStorm.
  * User: jax
  * Date: 2015/12/15
- * WIN：php D:\xampp\xampp\htdocs\ddyoung\application\core\script\class -f GetStockHighPrice.php
- * LIN GIT: php /usr/local/Apace2.2/htdocs/git/ddyoung/application/core/script/include/GetStockHighPrice.php
- * LIN Work: php /usr/local/Apace2.2/htdocs/ddyoung/application/core/script/include/GetStockHighPrice.php
+ * WIN：php D:\xampp\xampp\htdocs\ddyoung\application\core\script\class.php -f getStockHighPrice
+ * LIN GIT: php /usr/local/git/ddyoung/application/core/script/class.php -f  getStockHighPrice
+ * LIN Work: php /usr/local/Apace2.2/htdocs/application/core/script/class.php -f  getStockHighPrice
  * Time: 22:01
  */ 
 
